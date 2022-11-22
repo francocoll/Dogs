@@ -1,0 +1,37 @@
+.box{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color:rgb(142, 168, 160)
+}
+
+.box input{
+    padding: 7px;
+}
+
+.box button{
+    padding: 7px;
+    background-color: transparent;
+    border: 1px solid;
+}
+
+.box button:hover{
+    cursor: pointer;
+}
+
+.add{
+    font-weight: bold;
+}
+
+.add:hover{
+    cursor: pointer;
+}
+
+.reload{
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.reload:hover{
+ cursor: pointer;
+}
