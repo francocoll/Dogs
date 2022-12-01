@@ -12,10 +12,6 @@ module.exports = (sequelize) => {
         primaryKey: true
         // unique: true,
       },
-      id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4
-      }
     },
   );
 };

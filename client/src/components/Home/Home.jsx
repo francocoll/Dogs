@@ -56,7 +56,9 @@ const Home = () => {
 
   return (
     <div className={styles.background}>
-      <SearchBar />
+      <SearchBar 
+      setCurrentPage={setCurrentPage}
+      />
       <div className={styles.filter}>
         <select onChange={(e) => handleOrderByName(e)} defaultValue='Order by name'>
           <option disabled>Order by name</option>

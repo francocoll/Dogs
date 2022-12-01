@@ -32,7 +32,7 @@ const getDbInfo = async () => {
     return await Dog.findAll({
         include: {
             model: Temperament,
-            attributes: ['id', 'name']
+            attributes: ['name']
         },
         through: {
             attributes: []
@@ -55,7 +55,7 @@ router.get('/dogs', async (req, res) => {
             if (dogFilter.length !== 0) {
                 res.status(200).send(dogFilter)
             } else {
-                res.status(404).send('Noa')
+                res.status(404).send('Error')
             }
         } else {
             res.status(200).send(info)
@@ -80,21 +80,14 @@ router.get("/temperaments", async function (req, res) {
     try {
         const dataApi = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
         let temperaments = dataApi.data.map((el) => el.temperament);
-        //JUNTO EL ARRAY DE TERAMENTOS EN UN STRING Y LO VUELVO A DIVIDIR EN UN ARRAY
         temperaments = temperaments.join(", ").split(", ");
-        //FILTRO LOS VACIOS
         temperaments = temperaments.filter((el) => el);
-        //ELIMINO LOS DUPLICADOS
         temperaments = [...new Set(temperaments)].sort();
-        //console.log(temperaments);
-
-        // CREO UN NUEVO TEMPERAMENTO EN LA TABLA POR CADA ELEMENTO 
         temperaments.forEach((el) => {
             Temperament.findOrCreate({
                 where: { name: el },
             });
         });
-        //TRAIGO TODOS LOS TEMPERAMENTOS 
         const allTemperament = await Temperament.findAll();
         res.send(allTemperament);
     } catch {
@@ -115,7 +108,7 @@ router.post("/dog", async (req, res) => {
             life_span,
             image,
             temperament,
-        } = req.body; //Estos son los datos que me llegan por body
+        } = req.body; 
         const createdDog = await Dog.create({
             name,
             heightMin,

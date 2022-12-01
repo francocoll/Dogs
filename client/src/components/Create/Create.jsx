@@ -99,7 +99,7 @@ const Create = () => {
     } else if (input.temperament.length < 3) {
       setInput({
         ...input,
-        temperament: [...input.temperament, e.target.value]
+        temperament: input.temperament.includes(e.target.value) ? input.temperament : [...input.temperament, e.target.value]
       })
     }
   }
@@ -109,7 +109,6 @@ const Create = () => {
       ...input,
       temperament: input.temperament.filter((e) => e !== el)
     })
-    console.log(input)
   }
 
   return (

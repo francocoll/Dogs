@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { getDogName, getDogs } from '../../actions'
 import styles from './SearchBar.module.css'
 
-const SearchBar = () => {
+const SearchBar = ({setCurrentPage}) => {
     const dispatch = useDispatch()
     const [name, setName] = useState('')
 
@@ -23,12 +23,13 @@ const SearchBar = () => {
         e.preventDefault()
         if (name.length > 0) {
             dispatch(getDogName(name))
-
+            setCurrentPage(1)
             setName('');
             document.getElementById('search').value = ''
         } else {
             alert('Write a name!')
         }
+        
     }
 
     return (
