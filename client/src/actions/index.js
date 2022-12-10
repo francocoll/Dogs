@@ -91,3 +91,24 @@ export function filterByTemperament(payload) {
         payload
     }
 }
+
+export function cleanDog() {
+    return {
+        type: 'CLEAN_DOG',
+        payload: {}
+    }
+}
+
+export function masDe3(payload){
+    return {
+        type: 'MAS_3',
+        payload
+    }
+}
+
+export function loading(){
+    return {
+        type: 'LOADING'
+    }
+}
+

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { getDetail } from '../../actions/index'
+import { cleanDog, getDetail } from '../../actions/index'
 import styles from './Detail.module.css'
 const Detail = () => {
 
@@ -11,11 +11,13 @@ const Detail = () => {
 
     useEffect(() => {
         dispatch(getDetail(id))
+        return () => {
+            dispatch(cleanDog())
+        }
     }, [dispatch, id])
 
     return (
         <div>
-
             <div>
                 {myDog.length > 0 ? (
                     <div className={styles.container}>

@@ -2,7 +2,8 @@ const initialState = {
     dogs: [],
     allDogs: [],
     temperaments: [],
-    detail: {}
+    detail: [],
+    loader: true
 
 }
 
@@ -33,6 +34,16 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state
             }
+        case 'CLEAN_DOG':
+            return {
+                ...state,
+                detail: []
+            }
+        case 'LOADING':
+            return {
+                ...state,
+                loader: true
+            }
         case 'ORDER_BY_NAME':
             let orderAsc = state.dogs.slice().sort((a, b) => {
                 let dogA = a.name.toLowerCase();
@@ -58,6 +69,13 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 dogs: sortedWeight
+            }
+        case 'MAS_3':
+            const perros = state.allDogs
+            const filtro = perros.filter((el) => el.weightMin === 3)
+            return {
+                ...state,
+                dogs: filtro
             }
         case 'FILTER_BY_SOURCE':
             const allDogs2 = state.allDogs

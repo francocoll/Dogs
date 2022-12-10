@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getDogs, getTemperaments, orderByName, orderByWeight, filterBySource, filterByTemperament } from '../../actions'
+import { getDogs, getTemperaments, orderByName, orderByWeight, filterBySource, filterByTemperament, masDe3 } from '../../actions'
 import Card from '../Card/Card'
 import styles from './Home.module.css'
 import Pagination from '../Pagination/Pagination'
@@ -54,10 +54,16 @@ const Home = () => {
     setOrder(`Ordenado ${e.target.value}`)
   }
 
+  function filtrar(e) {
+    e.preventDefault()
+    dispatch(masDe3())
+    setCurrentPage(1)
+  }
+
   return (
     <div className={styles.background}>
-      <SearchBar 
-      setCurrentPage={setCurrentPage}
+      <SearchBar
+        setCurrentPage={setCurrentPage}
       />
       <div className={styles.filter}>
         <select onChange={(e) => handleOrderByName(e)} defaultValue='Order by name'>
@@ -76,6 +82,9 @@ const Home = () => {
           <option value='api'>Api</option>
           <option value='created'>Created</option>
         </select>
+        <button onClick={(e) => filtrar(e)} >
+          3+
+        </button>
         <select onChange={(e) => handleFilterByTemperament(e)} defaultValue='Filter by temperaments'>
           <option disabled>Filter by temperaments</option>
           <option value='all'>All temperaments</option>
