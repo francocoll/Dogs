@@ -70,13 +70,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 dogs: sortedWeight
             }
-        case 'MAS_3':
-            const perros = state.allDogs
-            const filtro = perros.filter((el) => el.weightMin === 3)
-            return {
-                ...state,
-                dogs: filtro
-            }
+        
         case 'FILTER_BY_SOURCE':
             const allDogs2 = state.allDogs
             const filterCreated =

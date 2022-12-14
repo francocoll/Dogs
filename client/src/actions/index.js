@@ -99,12 +99,6 @@ export function cleanDog() {
     }
 }
 
-export function masDe3(payload){
-    return {
-        type: 'MAS_3',
-        payload
-    }
-}
 
 export function loading(){
     return {
