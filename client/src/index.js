@@ -11,7 +11,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 // axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001'
-axios.defaults.baseURL = 'franco-pi.up.railway.app/'
+axios.defaults.baseURL = 'franco-pi.up.railway.app'
 
 ReactDOM.render(
   <React.StrictMode>
