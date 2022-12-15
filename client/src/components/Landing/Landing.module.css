@@ -1,23 +1,100 @@
-.back{
-    background-image:url(../../assets/dog.png);
-    background-repeat: no-repeat;
+.background {
+    /* background-image: url(./Images/back.jpg); */
+    background-color: #fff;
     background-size: cover;
     background-position: center;
-    height: 940px;
-    
-    
+    height: 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
 }
 
-.start{
-    margin-top: 15%;
-    width: 200px;
-    height: 50px;
-    font-size: 30px;
-    border-radius: 30px;
-    background-color: #000;
-    color: #fff;
+.contIzq {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 }
 
-.start:hover{
+.contTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contDer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo {
+    width: 30%;
+    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.4));
+}
+
+.dogImg {
+    min-height: 80%;
+
+}
+
+.title {
+    font-size: clamp(2.5rem, 1rem + 10vw, 4.9rem);
+    font-weight: 700;
+    font-family: "Rubik", sans-serif;
+    color: #0c0c0c;
+    padding-top: 17rem;
+}
+
+.button {
+    font-family: "Rubik", sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: #6f4deb;
+    font-weight: 700;
+    min-height: 40px;
+    min-width: 120px;
+    border-radius: 2rem;
     cursor: pointer;
+    border: none;
+}
+
+.button:hover {
+    color: rgb(255, 255, 255);
+    background-color: #8680aa;
+    border: none;
+}
+
+.parrafo {
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.3rem, 0.5rem + 5vw, 1.3rem);
+}
+
+.linkedin {
+    max-height: 30px;
+    background-color: #868686;
+    border-radius: 100%;
+    padding: 8px;
+}
+
+.linkedin:hover {
+    background-color: #66625c;
+}
+
+.github {
+    max-height: 30px;
+    background-color: #868686;
+    border-radius: 100%;
+    padding: 8px;
+    margin-left: 10px;
+}
+
+.github:hover {
+    background-color: #66625c;
+}
+
+.links {
+    display: flex;
 }
