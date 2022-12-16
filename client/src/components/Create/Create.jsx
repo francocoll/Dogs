@@ -113,8 +113,7 @@ const Create = () => {
 
   return (
     <div>
-      <div>
-        <h1 className={styles.title}>Create new dog</h1>
+      <div className={styles.formContainer}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.name}>
             <label className={styles.label}>Dog name</label>
