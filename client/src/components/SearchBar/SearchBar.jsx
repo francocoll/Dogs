@@ -5,6 +5,8 @@ import { getDogName, getDogs } from '../../actions'
 import styles from './SearchBar.module.css'
 import search from '../../assets/search.png'
 import add from '../../assets/add.png'
+import reload from '../../assets/refresh.png'
+import home from '../../assets/home.png'
 
 const SearchBar = ({ setCurrentPage }) => {
     const dispatch = useDispatch()
@@ -36,6 +38,9 @@ const SearchBar = ({ setCurrentPage }) => {
 
     return (
         <div className={styles.box}>
+            <Link to='/'>
+                <img src={home} alt='home' className={styles.home} />
+            </Link>
             <div className={styles.barra}>
                 <input
                     id='search'
@@ -54,7 +59,14 @@ const SearchBar = ({ setCurrentPage }) => {
                 <Link to='/create'>
                     <img src={add} alt='add' className={styles.add} />
                 </Link>
-                <button className={styles.reload} onClick={(e) => { handleClick(e) }}>Reload</button>
+                <button
+                    onClick={(e) => { handleClick(e) }}
+                    className={styles.reloadButton}>
+                    <img
+                        src={reload}
+                        alt='recarga'
+                        className={styles.reload} />
+                </button>
             </div>
         </div>
     )

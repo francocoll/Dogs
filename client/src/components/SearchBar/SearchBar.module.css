@@ -15,7 +15,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.search{
+.search {
     height: 25px;
 }
 
@@ -23,13 +23,12 @@
     outline: none;
 }
 
-.barra{
+.barra {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 }
-
 
 
 .searchButton {
@@ -43,29 +42,50 @@
     background: #39344d;
 }
 
-.box button {
-    padding: 7px;
-    border: transparent;
-
-}
-
-.box button:hover {
-    cursor: pointer;
-}
-
-.add {
-    font-weight: bold;
-}
 
 .add:hover {
     cursor: pointer;
 }
 
+.home{
+    height: 35px;
+}
+
 .reload {
-    font-weight: bold;
-    border-radius: 10px;
+    background: #ff8c87;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    height: 35px;
+    padding: 3px;
+    margin-right: 15px;
+}
+
+.add {
+    background: #ff8c87;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 3px;
+    height: 35px;
 }
 
 .reload:hover {
     cursor: pointer;
+    background-color: #39344d;
+}
+
+.add:hover{
+    cursor: pointer;
+    background-color: #39344d;
+}
+
+.reloadButton {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
