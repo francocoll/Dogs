@@ -102,6 +102,7 @@ const Home = () => {
                   image={el.image}
                   weightMin={el.weightMin}
                   weightMax={el.weightMax}
+                  temperament={el.temperament}
                 />
               )
             }) : null
