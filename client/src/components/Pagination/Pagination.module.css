@@ -1,5 +1,5 @@
-.back{
-    color:  rgb(61, 63, 63);
+.back {
+    color: rgb(61, 63, 63);
     height: 32px;
     text-align: center;
     margin: auto 4px;
@@ -13,10 +13,31 @@
     min-width: 32px;
 }
 
-.container{
+.container {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 0;
     margin: 15px;
 }
+
+.botones {
+    padding: 0 12px;
+    height: 32px;
+    text-align: center;
+    margin: auto 4px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    letter-spacing: 0.01em;
+    border-radius: 16px;
+    line-height: 1.43;
+    font-size: 13px;
+    min-width: 32px;
+    cursor: pointer;
+}
+
+.botones:hover{
+    background-color: rgb(154, 144, 177);
+}
+
