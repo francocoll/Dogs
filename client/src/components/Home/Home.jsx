@@ -5,6 +5,7 @@ import Card from '../Card/Card'
 import styles from './Home.module.css'
 import Pagination from '../Pagination/Pagination'
 import SearchBar from '../SearchBar/SearchBar'
+import Loading from '../Loading/Loading'
 
 
 
@@ -78,7 +79,7 @@ const Home = () => {
           <option value='api'>Api</option>
           <option value='created'>Created</option>
         </select>
-      
+
         <select onChange={(e) => handleFilterByTemperament(e)} defaultValue='Filter by temperaments'>
           <option disabled>Filter by temperaments</option>
           <option value='all'>All temperaments</option>
@@ -105,7 +106,7 @@ const Home = () => {
                   temperament={el.temperament}
                 />
               )
-            }) : null
+            }) : <Loading />
         }
       </div>
       <Pagination

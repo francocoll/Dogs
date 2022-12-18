@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { cleanDog, getDetail } from '../../actions/index'
 import styles from './Detail.module.css'
+import Loading from '../Loading/Loading'
 const Detail = () => {
 
     const { id } = useParams();
@@ -76,7 +77,7 @@ const Detail = () => {
                         </div>
                     </div>
                 ) : (
-                    <div>Loading...</div>
+                    <Loading />
                 )}
 
             </div>

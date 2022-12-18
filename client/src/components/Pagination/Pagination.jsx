@@ -9,11 +9,19 @@ const Pagination = ({ allDogs, dogsPerPage, pagination, currentPage }) => {
   return (
 
     <nav className={styles.container} >
-      <ul className={styles.back}>
-        {pageNumbers && pageNumbers.map(number => (
-          <button className={styles.buttons} onClick={() => pagination(number)} style={currentPage === number ? { backgroundColor: '#6f4deb' } : undefined}>{number}</button>
-        ))}
-      </ul>
+
+      {pageNumbers && pageNumbers.map((number) => (
+
+        <ul
+          onClick={() => pagination(number)}
+          style={currentPage === number
+            ? { backgroundColor: '#6f4deb' }
+            : undefined}
+          key={number}
+          className={styles.botones} >{number}</ul>
+
+      ))}
+
     </nav>
   )
 }
