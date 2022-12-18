@@ -15,7 +15,6 @@ const Detail = () => {
             dispatch(cleanDog())
         }
     }, [dispatch, id])
-    console.log(myDog)
 
     return (
         <div>
