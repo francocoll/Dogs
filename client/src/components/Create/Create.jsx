@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Form, Link, useNavigate } from 'react-router-dom'
 import { getTemperaments, postDog } from '../../actions'
 import styles from './Create.module.css'
+import TextField from '@mui/material/TextField';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputAdornment from '@mui/material/InputAdornment';
+import { MenuItem } from '@mui/material'
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
 
 function validate(input) {
   let error = {};
@@ -112,103 +118,111 @@ const Create = () => {
   }
 
   return (
-    <div>
-      <div className={styles.formContainer}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.name}>
-            <label className={styles.label}>Dog name</label>
-            <input
-              className={styles.input}
-              type="text"
-              name="name"
-              value={input.name}
-              onChange={handleChange} />
-            {error.name && <span className={styles.error}>{error.name}</span>}
-          </div>
-          <div>
-            <label className={styles.label}>Minimum height</label>
-            <input
-              className={styles.input}
-              type="number"
-              name="heightMin"
-              value={input.heightMin}
-              onChange={handleChange} />
-            {error.heightMin && <span className={styles.error}>{error.heightMin}</span>}
-          </div>
-          <div>
-            <label className={styles.label}>Maximum height</label>
-            <input
-              className={styles.input}
-              type="number"
-              name="heightMax"
-              value={input.heightMax}
-              onChange={handleChange} />
-            {error.heightMax && <span className={styles.error} >{error.heightMax}</span>}
-          </div>
-          <div>
-            <label className={styles.label}>Minimum weight</label>
-            <input
-              className={styles.input}
-              type="number"
-              name="weightMin"
-              value={input.weightMin}
-              onChange={handleChange} />
-            {error.weightMin && <span className={styles.error}>{error.weightMin}</span>}
-          </div>
-          <div>
-            <label className={styles.label}>Maximum weight</label>
-            <input
-              className={styles.input}
-              type="number"
-              name="weightMax"
-              value={input.weightMax}
-              onChange={handleChange} />
-            {error.weightMax && <span className={styles.error}>{error.weightMax}</span>}
-          </div>
-          <div>
-            <label className={styles.label}>Life span</label>
-            <input
-              className={styles.input}
-              type="number"
-              name="life_span"
-              value={input.life_span}
-              onChange={handleChange} />
-            {error.life_span && <span className={styles.error}>{error.life_span}</span>}
-          </div>
-          <div>
-            <label className={styles.label}>Temperaments:</label>
-            <select className={styles.input} name='temperaments' onChange={(e) => handleSelect(e)} defaultValue='Temperaments'>
-              <option value=''>Choose 1 or more</option>
-              {allTemperaments?.map((e) => (
-                <option className={styles.option} value={e.name} key={e.id}>
-                  {e.name}
-                </option>
-              ))}
-            </select>
-            {input.temperament.map((el) => (
-              <div key={el}>
-                <div className={styles.option}>
-                  <p >{el}</p>
-                  <button className={styles.deleteButton} value={el} onClick={() => handleDelete(el)}>x</button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div>
-            <label className={styles.label}>URL Image</label>
-            <input
-              className={styles.input}
-              type="text" name="image"
-              value={input.image}
-              onChange={handleChange} />
-            {error.image && <span>{error.image}</span>}
-          </div>
-          <button className={styles.sendButton} type="submit" >Create</button>
-        </form>
-      </div>
-      <Link to='/home'><button className={styles.backButton} >Home</button></Link>
-    </div>
+    <>
+  
+      {/* <Box sx={{ display: 'flex', border: '1px solid', width: '80%', alignItems: 'center', margin: 'auto', marginTop: '6%' }}>
 
+        <FormControl sx={{ m: 3, width: '30ch' }}>
+          <TextField
+            required
+            label="Dog name"
+            onChange={handleChange}
+            name='name'
+            value={input.name}
+            sx={{ m: 1 }}
+            
+          />
+
+          <OutlinedInput
+            endAdornment={<InputAdornment position="end">cm</InputAdornment>}
+            onChange={handleChange}
+            value={input.heightMin}
+            name='heightMin'
+            placeholder='Height min'
+            type='number'
+            sx={{ m: 1 }}
+          />
+
+          <OutlinedInput
+            endAdornment={<InputAdornment position="end">cm</InputAdornment>}
+            onChange={handleChange}
+            value={input.heightMax}
+            name='heightMax'
+            placeholder='Height max'
+            type='number'
+            sx={{ m: 1 }}
+          />
+        </FormControl>
+        <FormControl sx={{ m: 3, width: '30ch' }}>
+          <OutlinedInput
+            endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+            onChange={handleChange}
+            value={input.weightMin}
+            name='weightMin'
+            placeholder='Weight min'
+            type='number'
+            sx={{ m: 1 }}
+          />
+
+          <OutlinedInput
+            endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+            onChange={handleChange}
+            value={input.weightMax}
+            name='weightMax'
+            placeholder='Weight max'
+            type='number'
+            sx={{ m: 1 }}
+          />
+          <OutlinedInput
+            endAdornment={<InputAdornment position="end">years</InputAdornment>}
+            onChange={handleChange}
+            value={input.life_span}
+            name='life_span'
+            placeholder='Life span'
+            sx={{ m: 1 }}
+          />
+        </FormControl >
+        <FormControl sx={{ m: 3, width: '30ch' }}>
+          <TextField
+            select
+            label='Temperaments'
+            helperText='Choose 3 max temperaments'
+            defaultValue='Temperaments'
+            onChange={(e) => handleSelect(e)}
+            sx={{ m: 1 }}
+          >
+            {allTemperaments?.map((e) => (
+              <MenuItem value={e.name} key={e.id}>
+                {e.name}
+              </MenuItem>
+            ))}
+          </TextField>
+            
+          {input.temperament.map((el) => (
+            <div key={el}>
+              <div className={styles.option}>
+                <p >{el}</p>
+                <button className={styles.deleteButton} value={el} onClick={() => handleDelete(el)}>x</button>
+              </div>
+            </div>
+          ))}
+        </FormControl>
+        <FormControl>
+          <TextField
+            required
+            label="URL Image"
+            onChange={handleChange}
+            name='image'
+            value={input.image}
+            sx={{ m: 1 }}
+          />
+          <button className={styles.sendButton} type="submit" >Create</button>
+        </FormControl>
+
+
+      </Box >
+      <Link to='/home'><button className={styles.backButton} >Home</button></Link> */}
+    </>
   )
 }
 

@@ -6,6 +6,12 @@ import styles from './Home.module.css'
 import Pagination from '../Pagination/Pagination'
 import SearchBar from '../SearchBar/SearchBar'
 import Loading from '../Loading/Loading'
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import Box from '@mui/material/Box';
+
 
 
 
@@ -57,39 +63,68 @@ const Home = () => {
 
 
 
+
   return (
     <div className={styles.background}>
       <SearchBar
         setCurrentPage={setCurrentPage}
       />
       <div className={styles.filter}>
-        <select onChange={(e) => handleOrderByName(e)} defaultValue='Order by name'>
-          <option disabled>Order by name</option>
-          <option value='asc'>A - Z</option>
-          <option value='desc'>Z - A</option>
-        </select>
-        <select onChange={(e) => handleOrderByWeight(e)} defaultValue='Order by weight'>
-          <option disabled>Order by weight</option>
-          <option value='higher-weight'>Higher weight</option>
-          <option value='lower-weight'>Lower weight</option>
-        </select>
-        <select onChange={(e) => handleFilterBySource(e)} defaultValue='Filter by source'>
-          <option disabled>Filter by source</option>
-          <option value='all'>All</option>
-          <option value='api'>Api</option>
-          <option value='created'>Created</option>
-        </select>
+        <Box sx={{ minWidth: 170 }}>
+          <FormControl fullWidth>
+            <InputLabel id="name-order">Order by name</InputLabel>
+            <Select
+              id="name-order"
+              onChange={(e) => handleOrderByName(e)}
+              defaultValue="">
+              <MenuItem value='asc'>A - Z</MenuItem>
+              <MenuItem value='desc'>Z - A</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+        <Box sx={{ minWidth: 170 }}>
+          <FormControl fullWidth>
+            <InputLabel id="name-order">Order by weight</InputLabel>
+            <Select
+              id="weight-order"
+              onChange={(e) => handleOrderByWeight(e)}
+              defaultValue="">
+              <MenuItem value='higher-weight'>Higher weight</MenuItem>
+              <MenuItem value='lower-weight'>Lower weight</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+        <Box sx={{ minWidth: 170 }}>
+          <FormControl fullWidth>
+            <InputLabel id="source-filter">Filter by source</InputLabel>
+            <Select
+              id="source-filter"
+              onChange={(e) => handleFilterBySource(e)}
+              defaultValue="">
+              <MenuItem value='all'>All</MenuItem>
+              <MenuItem value='api'>Api</MenuItem>
+              <MenuItem value='created'>Created</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
 
-        <select onChange={(e) => handleFilterByTemperament(e)} defaultValue='Filter by temperaments'>
-          <option disabled>Filter by temperaments</option>
-          <option value='all'>All temperaments</option>
-          {allTemperaments?.map((e) => (
-            <option value={e.name} key={e.id}>
-              {e.name}
-            </option>
 
-          ))}
-        </select>
+        <Box sx={{ minWidth: 170 }}>
+          <FormControl fullWidth >
+            <InputLabel id="temperament-filter" >Filter by temperament</InputLabel>
+            <Select
+              id="temperament-filter"
+              onChange={(e) => handleFilterByTemperament(e)}
+              defaultValue="">
+              <MenuItem value='all'>All</MenuItem>
+              {allTemperaments?.map((e) => (
+                <MenuItem value={e.name} key={e}>
+                  {e.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
       </div>
       <div className={styles.container}>
         {
