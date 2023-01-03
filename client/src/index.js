@@ -13,6 +13,7 @@ dotenv.config()
 // axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001'
 axios.defaults.baseURL = 'https://dogs-production-6495.up.railway.app/'
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
