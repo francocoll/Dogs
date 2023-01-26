@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import store from './store'
 import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
 
 
 
-axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001'
+// axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001'
+
+axios.defaults.baseURL = 'https://dogs-production-82f2.up.railway.app'
 
 
 ReactDOM.render(
