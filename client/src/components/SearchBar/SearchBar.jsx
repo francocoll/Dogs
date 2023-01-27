@@ -7,6 +7,7 @@ import search from '../../assets/search.png'
 import add from '../../assets/add.png'
 import reload from '../../assets/refresh.png'
 import home from '../../assets/home.png'
+import { BsHouseDoorFill } from 'react-icons/bs'
 
 const SearchBar = ({ setCurrentPage }) => {
     const dispatch = useDispatch()
@@ -39,7 +40,7 @@ const SearchBar = ({ setCurrentPage }) => {
     return (
         <div className={styles.box}>
             <Link to='/'>
-                <img src={home} alt='home' className={styles.home} />
+                <BsHouseDoorFill style={{height:'2rem', width:'2rem'}}/>
             </Link>
             <div className={styles.barra}>
                 <input
