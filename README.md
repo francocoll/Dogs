@@ -27,7 +27,7 @@
 
 ## Main Technologies
 
-- Frontend: **_React, Redux Toolkit, React Router, Styled Components_**
+- Frontend: **_React,  React Router, 
 - Backend: **_nodeJS, ExpressJS, Sequelize, PostgreSQL, Axios_**
 
 ## 🔗 Demo: 
