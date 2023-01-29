@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Card from '@mui/material/Card';
+
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { Button, Card, CardActionArea } from '@mui/material';
 
 const DogCard = ({ name, image, id, weightMin, weightMax, temperament }) => {
   return (
@@ -25,13 +25,15 @@ const DogCard = ({ name, image, id, weightMin, weightMax, temperament }) => {
           </Typography>
           <Typography variant="body2" color="text.secondary">
             <span>{weightMin} - {weightMax} kg</span>
-            <p>
+            <div>
               {temperament}
-            </p>
+            </div>
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
+
+
   )
 }
 

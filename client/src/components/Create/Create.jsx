@@ -119,8 +119,8 @@ const Create = () => {
 
   return (
     <>
-
-      <Box sx={{ display: 'flex', border: '1px solid', width: '80%', alignItems: 'center', margin: 'auto', marginTop: '6%' }}>
+  
+      {/* <Box sx={{ display: 'flex', border: '1px solid', width: '80%', alignItems: 'center', margin: 'auto', marginTop: '6%' }}>
 
         <FormControl sx={{ m: 3, width: '30ch' }}>
           <TextField
@@ -130,6 +130,7 @@ const Create = () => {
             name='name'
             value={input.name}
             sx={{ m: 1 }}
+            
           />
 
           <OutlinedInput
@@ -220,7 +221,7 @@ const Create = () => {
 
 
       </Box >
-      <Link to='/home'><button className={styles.backButton} >Home</button></Link>
+      <Link to='/home'><button className={styles.backButton} >Home</button></Link> */}
     </>
   )
 }

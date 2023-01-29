@@ -75,7 +75,8 @@ const Home = () => {
             <InputLabel id="name-order">Order by name</InputLabel>
             <Select
               id="name-order"
-              onChange={(e) => handleOrderByName(e)}>
+              onChange={(e) => handleOrderByName(e)}
+              defaultValue="">
               <MenuItem value='asc'>A - Z</MenuItem>
               <MenuItem value='desc'>Z - A</MenuItem>
             </Select>
@@ -86,7 +87,8 @@ const Home = () => {
             <InputLabel id="name-order">Order by weight</InputLabel>
             <Select
               id="weight-order"
-              onChange={(e) => handleOrderByWeight(e)}>
+              onChange={(e) => handleOrderByWeight(e)}
+              defaultValue="">
               <MenuItem value='higher-weight'>Higher weight</MenuItem>
               <MenuItem value='lower-weight'>Lower weight</MenuItem>
             </Select>
@@ -97,7 +99,8 @@ const Home = () => {
             <InputLabel id="source-filter">Filter by source</InputLabel>
             <Select
               id="source-filter"
-              onChange={(e) => handleFilterBySource(e)}>
+              onChange={(e) => handleFilterBySource(e)}
+              defaultValue="">
               <MenuItem value='all'>All</MenuItem>
               <MenuItem value='api'>Api</MenuItem>
               <MenuItem value='created'>Created</MenuItem>
@@ -111,10 +114,11 @@ const Home = () => {
             <InputLabel id="temperament-filter" >Filter by temperament</InputLabel>
             <Select
               id="temperament-filter"
-              onChange={(e) => handleFilterByTemperament(e)}>
+              onChange={(e) => handleFilterByTemperament(e)}
+              defaultValue="">
               <MenuItem value='all'>All</MenuItem>
               {allTemperaments?.map((e) => (
-                <MenuItem value={e.name} key={e.id}>
+                <MenuItem value={e.name} key={e}>
                   {e.name}
                 </MenuItem>
               ))}
