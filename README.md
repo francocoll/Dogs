@@ -1,7 +1,11 @@
 # Dog API <img height="150" src="./client/src/assets/fondo.png" align="right"/>
 #### Individual Project for Henry Bootcamp
 
+## Images
 
+<img src='https://res.cloudinary.com/dxek0ymgo/image/upload/v1675121008/gusto/lkjgi4heggf72cx4jrw1.png' alt='aca va'>
+<img src='https://res.cloudinary.com/dxek0ymgo/image/upload/v1675121008/gusto/fc2adyh7oidp3srydfxu.png' alt='aca va'>
+ 
 
 ## Project Goals
 
@@ -27,11 +31,11 @@
 
 ## Main Technologies
 
-- Frontend: **_React,  React Router, 
-- Backend: **_nodeJS, ExpressJS, Sequelize, PostgreSQL, Axios_**
+- Frontend: **_React,  React Router_** 
+- Backend: **_Node.js, Express, Sequelize, PostgreSQL, Axios_**
 
 ## 🔗 Demo: 
-[https://franco-pi.up.railway.app/](https://franco-pi.up.railway.app/) 
+[https://dogs-franco.vercel.app/](https://dogs-franco.vercel.app/) 
 
 
 
