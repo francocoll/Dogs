@@ -26,6 +26,7 @@ const Detail = () => {
                             <img className={styles.img} src={myDog[0].image} alt="img not found" />
                         </div>
 
+
                         
                         <div className={styles.cardBody}>
                             <div className={styles.cardInfo}>
