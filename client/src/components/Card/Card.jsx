@@ -1,14 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, Card, CardActionArea } from '@mui/material';
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Button, Card, CardActionArea } from "@mui/material";
 
 const DogCard = ({ name, image, id, weightMin, weightMax, temperament }) => {
   return (
-    <Card sx={{ maxWidth: 395 }}>
+    <Card sx={{ width: 395, height: 340 }}>
       <CardActionArea>
         <Link to={`/dogs/${id}`}>
           <CardMedia
@@ -24,17 +24,15 @@ const DogCard = ({ name, image, id, weightMin, weightMax, temperament }) => {
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <span>{weightMin} - {weightMax} kg</span>
-            <div>
-              {temperament}
-            </div>
+            <span>
+              {weightMin} - {weightMax} kg
+            </span>
+            <div>{temperament}</div>
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
+  );
+};
 
-
-  )
-}
-
-export default DogCard
+export default DogCard;

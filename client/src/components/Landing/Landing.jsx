@@ -1,10 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './Landing.module.css'
-import fondo from '../../assets/fondo.png'
-import github from '../../assets/github.png'
-import linkedin from '../../assets/linkedin.png'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Landing.module.css";
+import fondo from "../../assets/fondo.png";
+import github from "../../assets/github.png";
+import linkedin from "../../assets/linkedin.png";
 
 const Landing = () => {
   return (
@@ -20,10 +19,16 @@ const Landing = () => {
             <img src={linkedin} alt="linkedin" className={styles.linkedin} />
           </a>
 
-          <a href="https://github.com/francocoll" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/francocoll"
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none" }}
+          >
             {" "}
             <img src={github} alt="github" className={styles.github} />
-          </a></div>
+          </a>
+        </div>
         <div className={styles.contTitle}>
           <div className={styles.title}>¡Welcome to the Dogs App!</div>
           <Link to="/home">
@@ -35,7 +40,7 @@ const Landing = () => {
         <img src={fondo} alt="perro" className={styles.dogImg} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;
